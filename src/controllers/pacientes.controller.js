@@ -8,6 +8,7 @@ const { json } = require("express")
 
 dotEnv.config()
 
+// FUNCIÓN AGREGAR PACIENTES
 const add_pacientes_new = async(req, res) => {
 
     let data = req.body
@@ -31,6 +32,7 @@ const add_pacientes_new = async(req, res) => {
 
 // }
 
+// RELACIÓN PACIENTE - MEDICAMENTO
 const medicamento_paciente = async(req,res) => {
 
     const idPaciente = req.params.idPaciente
@@ -48,6 +50,7 @@ const medicamento_paciente = async(req,res) => {
     res.json(searchPaciente)
 }
 
+// LISTAR PACIENTES
 const get_pacientes = async(req, res) => {
 
     const pacientes = await Pacientes.find()
@@ -62,6 +65,7 @@ const get_pacientes = async(req, res) => {
 
 // }
 
+//LISTAR-UNO PACIENTE
 const get_paciente = async(req, res) => {
 
     const id = req.params.id
@@ -76,6 +80,8 @@ const get_paciente = async(req, res) => {
 //     res.json(medicamento) 
 // }
 
+
+// AGREGAR SEGUIMIENTO
 const add_seguimiento = async(req, res) => {
 
     const id = req.params.id
@@ -87,6 +93,7 @@ const add_seguimiento = async(req, res) => {
     res.json(update)
 }
 
+// LOGIN PACIENTE
 const login = async(req, res) => {
 
     let data = req.body

@@ -4,21 +4,18 @@ const dotEnv = require("dotenv")
 dotEnv.config()
 
 // VALIDAR SESIÓN - COMPARAR TOKEN EN LA CABECERA
-const jwt_check = (req, res, next) => {
+const jwt_check_Admin = (req, res, next) => {
 
     try{
         let headerRol = req.headers["rol"]
-
-        if(headerRol == "user"){
-            let headerJwt = req.headers["authorization"]
-            let isJwt = jwt.verify(headerJwt, process.env.SECRET_JWT)
-            next()
-        }
 
         if(headerRol == "admin"){
             let headerJwt = req.headers["authorization"]
             let isJwt = jwt.verify(headerJwt, process.env.SECRET_JWT_ADMIN)
             next()
+        }
+        else{
+            throw new Error()
         }
     }
     catch{
@@ -27,4 +24,4 @@ const jwt_check = (req, res, next) => {
     }
 }
 
-module.exports = jwt_check
+module.exports = jwt_check_Admin
