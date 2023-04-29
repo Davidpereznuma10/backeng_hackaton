@@ -1,0 +1,4 @@
+PORT=3004
+URL_DB=mongodb+srv://root:jvbFlptCmDIyLcXf@cluster0.sxiilkr.mongodb.net/test
+SECRET_JWT=7S2fi%UT6Y70
+SECRET_JWT_ADMIN=m1nHH40s!Y@*
