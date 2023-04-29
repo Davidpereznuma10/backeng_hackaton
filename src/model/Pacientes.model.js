@@ -10,7 +10,7 @@ const pacientesSchema = new Schema(
         tel_cuidador: String,
         password: String,
         medicamentos: Array,
-        seguimiento: Object,
+        seguimiento: Array,
         
     },
     {
